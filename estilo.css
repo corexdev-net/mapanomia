@@ -1,0 +1,88 @@
+:root {
+  --marino: #0B1F3A;
+  --marino-2: #12294A;
+  --teal: #12A594;
+  --teal-claro: #3DD9C5;
+  --oro: #F4B53F;
+  --crema: #F7F3EA;
+  --texto: #DCE4EE;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--marino);
+  color: var(--texto);
+  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+}
+a { color: var(--teal-claro); }
+a:hover { color: var(--oro); }
+
+/* Portada de la página de inicio */
+.portada {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 16px;
+  background:
+    radial-gradient(ellipse at center, rgba(11, 31, 58, .55) 0%, rgba(11, 31, 58, .85) 70%),
+    url("fondo.svg") center / cover no-repeat;
+}
+.portada img.logo { width: min(640px, 92vw); height: auto; }
+.portada p.gancho {
+  max-width: 640px;
+  font-size: clamp(18px, 2.4vw, 22px);
+  color: var(--crema);
+  margin: 28px auto 32px;
+}
+.botones { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.boton {
+  display: inline-block;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--oro);
+  color: var(--marino);
+}
+.boton:hover { background: var(--crema); color: var(--marino); }
+.boton.secundario { background: transparent; color: var(--crema); border: 2px solid var(--teal); }
+.boton.secundario:hover { border-color: var(--oro); color: var(--oro); }
+
+.temas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 980px;
+  margin: 56px auto 0;
+  text-align: left;
+}
+.tema {
+  background: rgba(18, 41, 74, .78);
+  border: 1px solid rgba(61, 217, 197, .25);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+.tema b { display: block; color: var(--oro); margin-bottom: 4px; }
+
+/* Páginas legales */
+main.legal { max-width: 780px; margin: 0 auto; padding: 32px 16px 56px; }
+main.legal header { padding: 8px 0 24px; border-bottom: 1px solid rgba(61, 217, 197, .25); }
+main.legal header img { width: 320px; max-width: 80vw; height: auto; }
+main.legal h1 { color: var(--crema); font-size: 34px; line-height: 1.2; margin: 32px 0 4px; }
+main.legal h2 { color: var(--oro); font-size: 21px; margin-top: 34px; }
+.fecha { color: #8FA3BA; margin-top: 0; }
+
+footer {
+  text-align: center;
+  color: #8FA3BA;
+  font-size: 15px;
+  padding: 28px 16px;
+  border-top: 1px solid rgba(61, 217, 197, .2);
+}
+footer a { color: #B8C7D8; }
